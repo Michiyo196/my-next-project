@@ -1,8 +1,9 @@
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { getNewsDetail } from "@/app/_libs/microcms";
 import Article from "@/app/_components/Article";
 import ButtonLink from "@/app/_components/ButtonLink";
-import style from "./page.module.css";
+import styles from "./page.module.css";
 
 type Props = {
   params: {
