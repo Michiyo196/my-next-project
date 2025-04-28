@@ -5,13 +5,14 @@ import NewsList from "@/app/_components/NewsList";
 import { NEWS_LIST_LIMIT } from "@/app/_constants";
 
 type Props = {
-  params: {
+  params: Promise<{
     id: string;
     current: string;
-  };
+  }>;
 };
 
-export default async function Page({ params }: Props) {
+export default async function Page(props: Props) {
+  const params = await props.params;
   const current = parseInt(params.current, 10);
 
   if (Number.isNaN(current) || current < 1) {
